@@ -1,4 +1,4 @@
-![noise_impact_comparison](https://github.com/user-attachments/assets/3e794796-4347-44c0-89e4-009d92479671)# Fault Lines: A Benchmark for ML Classifier Robustness to Label Noise with Fairness Considerations
+# Fault Lines: A Benchmark for ML Classifier Robustness to Label Noise with Fairness Considerations
 
 This repository contains the implementation and benchmark for "Fault Lines: A Benchmark for ML Classifier Robustness to Label Noise with Fairness Considerations" - a comprehensive evaluation framework for testing machine learning model robustness to various types of label noise while considering fairness implications.
 
