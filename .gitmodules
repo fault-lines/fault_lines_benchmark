@@ -1,0 +1,3 @@
+[submodule "tableshift"]
+	path = tableshift
+	url = https://github.com/mlfoundations/tableshift.git
