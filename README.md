@@ -199,19 +199,6 @@ Results are automatically saved to CSV files in the results/ directory with comp
 2. Implement any required preprocessing or fitting logic
 3. Update command-line choices
 
-## Citation
-
-If you use this benchmark in your research, please cite:
-
-@article{jackson2024fault,
- title={Fault Lines: A Benchmark for ML Classifier Robustness to Label Noise with Fairness Considerations},
- author={Jackson, David and Groth, Paul and Harmouch, Hazar},
- journal={PVLDB},
- volume={14},
- number={1},
- year={2024}
-}
-
 ## Contributing
 
 We welcome contributions! Please see our contribution guidelines and feel free to:
