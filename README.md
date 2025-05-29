@@ -114,6 +114,8 @@ The benchmark supports six types of label noise:
 4. **Correlated**: Noise based on multiple feature interactions
 5. **Concatenated**: Noise triggered by any of multiple conditions
 6. **Temporal/Age-based**: Time or age-dependent noise patterns
+   
+Please see the [noise description file](noise_conditions_description.md) for more details.
 
 ## Command Line Arguments
 
@@ -210,7 +212,9 @@ We welcome contributions! Please see our contribution guidelines and feel free t
 
 ## License
 
-This project is licensed under the Creative Commons BY-NC-ND 4.0 International License.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+Copyright (c) 2024 University of Amsterdam
 
 ## Acknowledgments
 
