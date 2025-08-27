@@ -1,5 +1,7 @@
 # Extending Fault Lines Benchmark for Multi-Class and Regression
 
+Here we provide a more detailed overview of how future work could extend our benchmark for multiple classes or regression tasks.
+
 ## Multi-Class Classification Extension
 
 ### Noise Types
@@ -50,4 +52,4 @@
 - **Implementation**: Use the top five trials by MSE to evaluate performance-fairness trade-offs, adapting in-distribution and out-of-distribution tests for continuous outcomes.
 
 ### Notes on Fairness in Regression
-Fairness in regression is underexplored compared to classification, as research has focused on discrete outcomes (e.g., loan approval) in high-stakes domains. Regression's continuous nature requires new metrics, and the proposed threshold-based formulations (e.g., $E[\hat{Y} | Y > \tau, A = a] = E[\hat{Y} | Y > \tau, A = b]$) are tailored to the benchmark's diverse noise types (e.g., Conditional Feature Noise) and datasets (e.g., Hypertension). These non-standard adaptations address systematic biases in datasets like FICO HELOC, ensuring relevance to real-world applications.
+Fairness in regression is underexplored compared to classification, as research has focused on discrete outcomes (e.g., loan approval) in high-stakes domains. Regression's continuous nature requires new metrics, and the proposed threshold-based formulations (e.g., $E[\hat{Y} | Y > \tau, A = a] = E[\hat{Y} | Y > \tau, A = b]$) are not standard and tailored to the benchmark's diverse noise types (e.g., Conditional Feature Noise) and datasets (e.g., Hypertension). 
