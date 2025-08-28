@@ -34,10 +34,8 @@ Here we provide a more detailed overview of how future work could extend our ben
 - **Conditional Feature Noise**: Apply $\mathcal{N}(0, \sigma^2)$ when $f_j = x$, with $\sigma = p \cdot \text{std}(y)$, modeling errors tied to specific conditions (e.g., income level).
 - **Correlated Feature Noise**: Add $\mathcal{N}(0, \sigma^2)$ when $f_j = x$ and $f_k = y$, capturing joint feature effects on labeling errors.
 - **Concatenated Feature Noise**: Introduce noise when $f_j = x$ or $f_k = y$, with $\sigma = p \cdot \text{std}(y)$, reflecting cumulative risk factors.
-- **Temporal/Contextual Noise**: Vary $\sigma(t_i)$ over time or context (e.g., $\sigma(t_i) = \sigma_{\min} + (t_{\max} - t_i)/(t_{\max} - t_{\min}) \cdot (\sigma_{\max} - \sigma_{\min})$), simulating evolving data quality.
+- **Temporal/Contextual Noise**: Vary $\sigma(t_i)$ over time or context (e.g., $\sigma(t_i) = \sigma_{\min} + (t_{\max} - t_i)/(t_{\max} - t_{\min}) \cdot (\sigma_{\max} - \sigma_{\min})$ ), simulating evolving data quality.
 - **Class-Conditional Noise**: Partition labels into quantiles (e.g., tertiles), applying $\mathcal{N}(0, \sigma_c^2)$ based on quantile $c$, where $\sigma_c = p \cdot \text{std}(y_c)$.
-- **Trend Noise**: Add a trend-based perturbation (e.g., $\epsilon_i = a \cdot y_i + b \cdot t_i + \mathcal{N}(0, \sigma^2)$), where $a$ and $b$ are coefficients, modeling systematic label drift.
-- **Implementation Details**: Calibrate $\sigma$ to preserve label distribution realism, testing with synthetic regression datasets (e.g., Boston Housing with noise).
 
 ### Evaluation/Fairness Metrics
 - **Performance Metrics**:
