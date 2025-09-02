@@ -29,6 +29,8 @@ Here we provide a more detailed overview of how future work could extend our ben
 
 ## Regression Extension
 
+Fairness in regression is underexplored compared to classification, as research has focused on discrete outcomes (e.g., loan approval) in high-stakes domains. Regression's continuous nature requires new metrics, and the proposed threshold-based formulations (e.g., $E[\hat{Y} | Y > \tau, A = a] = E[\hat{Y} | Y > \tau, A = b]$) may not be standard and are tailored to the benchmark's diverse noise types (e.g., Conditional Feature Noise) and datasets (e.g., Hypertension). 
+
 ### Noise Types
 - **Random Noise**: Add Gaussian noise $\mathcal{N}(0, \sigma^2)$ to labels, where $\sigma = p \cdot \text{std}(y)$ scales with the noise rate $p$. This simulates random measurement errors.
 - **Conditional Feature Noise**: Apply $\mathcal{N}(0, \sigma^2)$ when $f_j = x$, with $\sigma = p \cdot \text{std}(y)$, modeling errors tied to specific conditions (e.g., income level).
@@ -48,6 +50,3 @@ Here we provide a more detailed overview of how future work could extend our ben
   - **Equalized Odds**: Balance error distributions: $E[(\hat{Y} - Y)^2 | A = a] = E[(\hat{Y} - Y)^2 | A = b]$, focusing on error equity.
   - **Predictive Parity**: Ensure conditional expectations match: $E[Y | \hat{Y} > \tau, A = a] = E[Y | \hat{Y} > \tau, A = b]$, emphasizing reliability for high predictions.
 - **Implementation**: Use the top five trials by MSE to evaluate performance-fairness trade-offs, adapting in-distribution and out-of-distribution tests for continuous outcomes.
-
-### Notes on Fairness in Regression
-Fairness in regression is underexplored compared to classification, as research has focused on discrete outcomes (e.g., loan approval) in high-stakes domains. Regression's continuous nature requires new metrics, and the proposed threshold-based formulations (e.g., $E[\hat{Y} | Y > \tau, A = a] = E[\hat{Y} | Y > \tau, A = b]$) are not standard and tailored to the benchmark's diverse noise types (e.g., Conditional Feature Noise) and datasets (e.g., Hypertension). 
