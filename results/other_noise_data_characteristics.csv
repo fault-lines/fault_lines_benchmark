@@ -1,0 +1,16 @@
+Dataset,Condition 1 (C₁),Condition 2 (C₂),C₁ ∩ C₂,C₁ ∪ C₂,C₁,C₂
+ACS Food Stamps,Minority race,English proficiency,15.31%,85.93%,28.2%,73.08%
+ACS Income,Minority race,Older age,9.57%,68.98%,28.9%,49.65%
+ACS Public Coverage,Minority race,Employment Status of Parents,1.04%,32.47%,28.6%,4.86%
+ACS Unemployment,Minority race,Migration status,4.39%,35.50%,23.4%,16.49%
+ANES,No answer to question 302,No answer to question 301,1.56%,20.46%,20.46%,1.56%
+Assistments,High attempt usage,Hint usage,10.99%,20.22%,19.4%,11.81%
+BRFSS Blood Pressure,Poverty condition,Older age,11.65%,53.13%,24.9%,39.78%
+BRFSS Diabetes,High BMI,Smoker,9.96%,50.78%,30.9%,29.84%
+College Scorecard,Veteran status,Admission rate,6.49%,45.95%,25.5%,26.98%
+Diabetes Readmission,Minority race,Gender,12.25%,61.31%,20.2%,53.32%
+HELOC,Delinquency history,Fewer trades,21.26%,48.06%,21.3%,48.06%
+MIMIC LOS,Older age,Gender,11.15%,57.04%,29.4%,38.19%
+MIMIC Mortality,Older age,Gender,10.6%,56.89%,30.4%,37.49%
+NHANES Lead,Younger Demographic,Gender,12.46%,63.19%,24.45%,51.2%
+Physionet,Heart rate failure,Temperature failure,10.03%,75.09%,19.0%,66.12%
