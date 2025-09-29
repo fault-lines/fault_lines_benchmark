@@ -26,19 +26,29 @@ Real-world datasets often contain label errors that can significantly impact mac
 ## Repository Structure
 
 fault_lines/
-├── add/                          # Additional modules
-│   ├── cleaning_algo.py         # Data cleaning algorithms
-│   └── ReweightingGridSearch.py # Fairness reweighting methods
-├── images/                      # Figures and visualizations
-├── pollute/                     # Noise injection modules
+├── .idea/                              # IDE configuration
+├── add/                                # Additional modules
+│   ├── cleaning_algo.py               # Data cleaning algorithms
+│   └── ReweightingGridSearch.py       # Fairness reweighting methods
+├── images/                             # Figures and visualizations
+├── other_noise_plots/                  # Additional noise visualizations
+├── pollute/                            # Noise injection modules
 │   ├── dataset_noise_conditions.py
 │   ├── main_pollute.py
 │   └── noise_classes.py
-├── results/                     # Experimental results
-├── tableshift/                  # TableShift integration
-├── main.py                      # Main training script
-├── eval.py                      # Evaluation utilities
-└── requirements.txt             # Dependencies
+├── results/                            # Experimental results
+├── tableshift/                         # TableShift integration (submodule)
+├── .gitmodules                         # Git submodule configuration
+├── LICENSE                             # License file
+├── README.md                           # Project documentation
+├── eval.py                             # Evaluation utilities
+├── extension_instructions_detailed.md  # Detailed extension instructions (multi-class/regression)
+├── main.py                             # Main training script
+├── noise_conditions_description.md     # Noise conditions documentation
+├── other_noise.md                      # Other noise results
+└── requirements.txt                    # Dependencies
+
+As mentioned in the paper, please see the [other_noise file](other_noise.md) for more detailed results on correlated, concatenated, and temporal noise. Please see the [extension_instructions_detailed file](extension_instructions_detailed.md) for a walkthrough on how future work could extend our framework to multiclass and regression tasks. 
 
 ## Prerequisites
 
@@ -214,7 +224,7 @@ We welcome contributions! Please see our contribution guidelines and feel free t
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-Copyright (c) 2024 University of Amsterdam
+Copyright (c) 2025 University of Amsterdam
 
 ## Acknowledgments
 
