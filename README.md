@@ -25,6 +25,8 @@ Real-world datasets often contain label errors that can significantly impact mac
 
 ## Repository Structure
 
+As mentioned in the paper, please see the [other_noise file](other_noise.md) for more detailed results on correlated, concatenated, and temporal noise. Please see the [extension_instructions_detailed file](extension_instructions_detailed.md) for a walkthrough on how future work could extend our framework to multiclass and regression tasks. 
+
 fault_lines/
 ├── .idea/                              # IDE configuration
 ├── add/                                # Additional modules
@@ -47,8 +49,6 @@ fault_lines/
 ├── noise_conditions_description.md     # Noise conditions documentation
 ├── other_noise.md                      # Other noise results
 └── requirements.txt                    # Dependencies
-
-As mentioned in the paper, please see the [other_noise file](other_noise.md) for more detailed results on correlated, concatenated, and temporal noise. Please see the [extension_instructions_detailed file](extension_instructions_detailed.md) for a walkthrough on how future work could extend our framework to multiclass and regression tasks. 
 
 ## Prerequisites
 
