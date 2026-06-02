@@ -248,7 +248,6 @@ If you use this benchmark in your research, please cite our paper:
   year={2025},
   publisher={VLDB Endowment}
 }
-}
 ```
 
 ## License
