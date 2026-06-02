@@ -25,13 +25,14 @@ Real-world datasets often contain label errors that can significantly impact mac
 
 ## Repository Structure
 
-As mentioned in the paper, please see the [other_noise file](other_noise.md) for more detailed results on correlated, concatenated, and temporal noise. Please see the [extension_instructions_detailed file](extension_instructions_detailed.md) for a walkthrough on how future work could extend our framework to multiclass and regression tasks. 
+As mentioned in the paper, please see the [other_noise file](other_noise.md) for more detailed results on correlated, concatenated, and temporal noise. Please see the [extension_instructions_detailed file](extension_instructions_detailed.md) for a walkthrough on how future work could extend our framework to multiclass and regression tasks.
 
+```
 fault_lines/
 ├── .idea/                              # IDE configuration
 ├── add/                                # Additional modules
-│   ├── cleaning_algo.py               # Data cleaning algorithms
-│   └── ReweightingGridSearch.py       # Fairness reweighting methods
+│   ├── cleaning_algo.py                # Data cleaning algorithms
+│   └── ReweightingGridSearch.py        # Fairness reweighting methods
 ├── images/                             # Figures and visualizations
 ├── other_noise_plots/                  # Additional noise visualizations
 ├── pollute/                            # Noise injection modules
@@ -49,15 +50,19 @@ fault_lines/
 ├── noise_conditions_description.md     # Noise conditions documentation
 ├── other_noise.md                      # Other noise results
 └── requirements.txt                    # Dependencies
+```
 
 ## Prerequisites
 
 ### TableShift Dataset Access
 
-This benchmark builds upon the TableShift framework (https://github.com/mlfoundations/tableshift). You'll need to:
+This benchmark builds upon the [TableShift framework](https://github.com/mlfoundations/tableshift). You'll need to:
 
 1. Clone the original TableShift repository:
-  git clone https://github.com/mlfoundations/tableshift.git
+
+   ```bash
+   git clone https://github.com/mlfoundations/tableshift.git
+   ```
 
 2. Follow their setup instructions to download the datasets. Refer to their documentation for dataset access requirements and download procedures.
 
@@ -67,7 +72,9 @@ This benchmark builds upon the TableShift framework (https://github.com/mlfounda
 
 Install the required packages:
 
+```bash
 pip install -r requirements.txt
+```
 
 Key dependencies include:
 - pandas, numpy, scikit-learn
@@ -82,19 +89,25 @@ Key dependencies include:
 
 Train a CatBoost model with random noise:
 
+```bash
 python main.py --experiment diabetes_readmission --model catboost --noise_type random --flip_prob 0.1
+```
 
 ### Fairness-Aware Training
 
 Train a fairness-aware model with biased noise:
 
+```bash
 python main.py --experiment diabetes_readmission --model faireg --constraint_type demographic_parity --noise_type biased --flip_prob 0.1
+```
 
 ### Data Cleaning Integration
 
 Apply data cleaning before training:
 
+```bash
 python main.py --experiment diabetes_readmission --model catboost --noise_type biased --flip_prob 0.1 --cleaning_method custom --cleaning_params '{"custom_param": 0.3}'
+```
 
 ## Supported Models
 
@@ -124,28 +137,28 @@ The benchmark supports six types of label noise:
 4. **Correlated**: Noise based on multiple feature interactions
 5. **Concatenated**: Noise triggered by any of multiple conditions
 6. **Temporal/Age-based**: Time or age-dependent noise patterns
-   
+
 Please see the [noise description file](noise_conditions_description.md) for more details.
 
 ## Command Line Arguments
 
 ### Core Arguments
-- --experiment: Dataset name (e.g., 'diabetes_readmission', 'adult')
-- --model: Model type ('catboost', 'faireg', 'fairgs', 'fairrs')
-- --noise_type: Type of noise injection ('random', 'biased', 'correlated', 'concatenated', 'age_based')
-- --flip_prob: Noise probability (0.0-1.0)
+- `--experiment`: Dataset name (e.g., `diabetes_readmission`, `adult`)
+- `--model`: Model type (`catboost`, `faireg`, `fairgs`, `fairrs`)
+- `--noise_type`: Type of noise injection (`random`, `biased`, `correlated`, `concatenated`, `age_based`)
+- `--flip_prob`: Noise probability (0.0-1.0)
 
 ### Fairness Arguments
-- --constraint_type: Fairness constraint ('demographic_parity', 'equalized_odds', 'error_rate_parity', 'equal_opportunity', 'predictive_equality')
+- `--constraint_type`: Fairness constraint (`demographic_parity`, `equalized_odds`, `error_rate_parity`, `equal_opportunity`, `predictive_equality`)
 
 ### Cleaning Arguments
-- --cleaning_method: Data cleaning approach ('none', 'custom')
-- --cleaning_params: JSON string with cleaning parameters
+- `--cleaning_method`: Data cleaning approach (`none`, `custom`)
+- `--cleaning_params`: JSON string with cleaning parameters
 
 ### Training Arguments
-- --num_samples: Number of hyperparameter optimization trials (default: 100)
-- --random_seed: Random seed for reproducibility (default: 42)
-- --use_gpu: Enable GPU acceleration for compatible models
+- `--num_samples`: Number of hyperparameter optimization trials (default: 100)
+- `--random_seed`: Random seed for reproducibility (default: 42)
+- `--use_gpu`: Enable GPU acceleration for compatible models
 
 ## Available Datasets
 
@@ -184,7 +197,7 @@ The benchmark uses 15 datasets from TableShift spanning multiple domains:
 
 ## Results and Analysis
 
-Results are automatically saved to CSV files in the results/ directory with comprehensive metrics including:
+Results are automatically saved to CSV files in the `results/` directory with comprehensive metrics including:
 
 - Model performance on clean and noisy data
 - Fairness metrics across different demographic groups
@@ -195,19 +208,19 @@ Results are automatically saved to CSV files in the results/ directory with comp
 
 ### Adding New Cleaning Methods
 
-1. Implement a new class in add/cleaning_algo.py inheriting from DataCleaningMethod
-2. Add the method to the cleaning factory in main.py
+1. Implement a new class in `add/cleaning_algo.py` inheriting from `DataCleaningMethod`
+2. Add the method to the cleaning factory in `main.py`
 3. Update command-line choices
 
 ### Adding New Noise Types
 
-1. Implement noise logic in pollute/noise_classes.py
-2. Update the DatasetNoiseInjector in pollute/main_pollute.py
+1. Implement noise logic in `pollute/noise_classes.py`
+2. Update the `DatasetNoiseInjector` in `pollute/main_pollute.py`
 3. Add to command-line choices
 
 ### Adding New Models
 
-1. Add model configuration to the model factory in main.py
+1. Add model configuration to the model factory in `main.py`
 2. Implement any required preprocessing or fitting logic
 3. Update command-line choices
 
@@ -220,6 +233,24 @@ We welcome contributions! Please see our contribution guidelines and feel free t
 - Add new datasets, models, or noise types
 - Improve documentation
 
+## Citation
+
+If you use this benchmark in your research, please cite our paper:
+
+```bibtex
+@article{jackson2025fault,
+  title={Fault Lines: Benchmarking the Impact of Label Data Quality on ML Robustness and Fairness},
+  author={Jackson, David and Groth, Paul and Harmouch, Hazar},
+  journal={Proceedings of the VLDB Endowment},
+  volume={19},
+  number={4},
+  pages={670--683},
+  year={2025},
+  publisher={VLDB Endowment}
+}
+}
+```
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
@@ -228,4 +259,4 @@ Copyright (c) 2025 University of Amsterdam
 
 ## Acknowledgments
 
-This work builds upon the excellent TableShift benchmark (https://github.com/mlfoundations/tableshift). We thank the TableShift authors for providing the foundational framework and datasets that made this research possible.
+This work builds upon the excellent [TableShift benchmark](https://github.com/mlfoundations/tableshift). We thank the TableShift authors for providing the foundational framework and datasets that made this research possible.
